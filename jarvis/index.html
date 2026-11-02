@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>J.A.R.V.I.S. | Stark Industries</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="scanlines"></div>
+  <div class="vignette"></div>
+
+  <div class="hud">
+    <!-- TOP LEFT: STARK + TIME -->
+    <div class="panel top-left">
+      <div class="panel-header">
+        <span class="logo">STARK INDUSTRIES</span>
+      </div>
+      <div class="time-block">
+        <div id="clock" class="clock">19:42:17</div>
+        <div id="date" class="date">TER, 14 OUT 2025</div>
+      </div>
+    </div>
+
+    <!-- LEFT COLUMN: SISTEMAS + HOLOGRAM -->
+    <div class="left-column">
+      <div class="panel systems-panel">
+        <div class="panel-title">SISTEMAS</div>
+        <ul class="systems-list" id="systems-list">
+          <li><span class="status-dot online"></span> PROPULSORES <span class="value">100%</span></li>
+          <li><span class="status-dot online"></span> ARMADURA <span class="value">100%</span></li>
+          <li><span class="status-dot online"></span> ENERGIA <span class="value">98%</span></li>
+          <li><span class="status-dot online"></span> COMUNICAÇÃO <span class="value">100%</span></li>
+          <li><span class="status-dot online"></span> IA - J.A.R.V.I.S. <span class="value online-text">ONLINE</span></li>
+        </ul>
+      </div>
+
+      <div class="panel hologram-panel">
+        <div class="hologram-container">
+          <div class="hologram-ring"></div>
+          <div class="hologram-ring ring-2"></div>
+          <div class="ironman">
+            <div class="helmet"></div>
+            <div class="torso"></div>
+            <div class="arm left"></div>
+            <div class="arm right"></div>
+            <div class="leg left"></div>
+            <div class="leg right"></div>
+            <div class="arc-reactor-core"></div>
+          </div>
+          <div class="hologram-base"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CENTER: J.A.R.V.I.S. LOGO -->
+    <div class="center-core">
+      <div class="core-rings">
+        <div class="ring ring-outer"></div>
+        <div class="ring ring-mid"></div>
+        <div class="ring ring-inner"></div>
+        <div class="core-circle">
+          <div class="jarvis-title">J.A.R.V.I.S.</div>
+          <div class="status-line">
+            <span class="status-dot online"></span>
+            <span id="core-status">ONLINE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOP RIGHT: MAPA GLOBAL -->
+    <div class="panel map-panel">
+      <div class="panel-title">MAPA GLOBAL</div>
+      <div class="world-map">
+        <svg viewBox="0 0 1000 500" class="map-svg">
+          <path class="continent" d="M150,120 Q200,80 280,100 T400,130 Q450,150 420,200 T350,250 Q300,280 220,260 T150,200 Z" />
+          <path class="continent" d="M480,100 Q550,70 620,90 T700,140 Q720,180 680,220 T580,240 Q520,220 500,180 Z" />
+          <path class="continent" d="M720,180 Q780,160 850,190 T900,280 Q880,340 800,360 T720,320 Q700,260 720,180 Z" />
+          <path class="continent" d="M200,320 Q280,300 350,340 T400,420 Q350,450 280,430 T200,380 Z" />
+          <path class="continent" d="M780,380 Q850,360 920,400 T950,460 Q900,480 820,470 T780,420 Z" />
+          <circle class="node" cx="220" cy="160" r="4" />
+          <circle class="node" cx="580" cy="140" r="4" />
+          <circle class="node" cx="820" cy="260" r="4" />
+          <circle class="node" cx="320" cy="380" r="4" />
+          <circle class="node" cx="860" cy="430" r="4" />
+          <line class="connection" x1="220" y1="160" x2="580" y2="140" />
+          <line class="connection" x1="580" y1="140" x2="820" y2="260" />
+          <line class="connection" x1="820" y1="260" x2="860" y2="430" />
+          <line class="connection" x1="220" y1="160" x2="320" y2="380" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: CLIMA + NOTIFICAÇÕES -->
+    <div class="right-column">
+      <div class="panel weather-panel">
+        <div class="panel-title">CLIMA</div>
+        <div class="weather-content">
+          <div class="weather-icon">☀️</div>
+          <div class="weather-temp">24°C</div>
+          <div class="weather-desc">Ensolarado</div>
+          <div class="weather-loc">Santa Maria - RS</div>
+        </div>
+      </div>
+
+      <div class="panel notif-panel">
+        <div class="panel-title">NOTIFICAÇÕES</div>
+        <div class="notif-item">
+          <span class="notif-icon">✉</span>
+          <span id="notif-text">Nenhuma nova mensagem</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM LEFT: ARCA REATOR -->
+    <div class="panel reactor-panel">
+      <div class="reactor-visual">
+        <div class="reactor-ring"></div>
+        <div class="reactor-core"></div>
+      </div>
+      <div class="reactor-info">
+        <div class="reactor-title">ARCA REATOR</div>
+        <div class="reactor-value" id="reactor-value">98%</div>
+        <div class="reactor-label">CAPACIDADE</div>
+        <div class="reactor-bars">
+          <div class="bar" style="height:40%"></div>
+          <div class="bar" style="height:65%"></div>
+          <div class="bar" style="height:85%"></div>
+          <div class="bar" style="height:55%"></div>
+          <div class="bar" style="height:95%"></div>
+          <div class="bar" style="height:70%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM CENTER: CITY HOLOGRAM -->
+    <div class="panel city-panel">
+      <div class="city-hologram">
+        <div class="building b1"></div>
+        <div class="building b2"></div>
+        <div class="building b3"></div>
+        <div class="building b4"></div>
+        <div class="building b5"></div>
+        <div class="building b6"></div>
+        <div class="platform"></div>
+      </div>
+    </div>
+
+    <!-- BOTTOM RIGHT: CONTROLE DE VOZ -->
+    <div class="panel voice-panel">
+      <div class="panel-title">CONTROLE DE VOZ</div>
+      <div class="voice-content">
+        <div class="mic-icon" id="mic-btn">
+          <svg viewBox="0 0 24 24" width="32" height="32">
+            <path fill="currentColor" d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 14.2 14.47 16 12 16s-4.52-1.8-4.93-4.15c-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 2.89 5.34 5.91 5.78V20c0 .55.45 1 1 1s1-.45 1-1v-2.08c3.02-.44 5.42-2.78 5.91-5.78.1-.6-.39-1.14-1-1.14z"/>
+          </svg>
+        </div>
+        <div class="voice-status" id="voice-status">Aguardando comando...</div>
+        <div class="voice-wave">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAT / RESPONSE AREA -->
+    <div class="chat-overlay" id="chat-overlay">
+      <div class="chat-box">
+        <div class="chat-header">J.A.R.V.I.S.</div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input-area">
+          <input type="text" id="text-input" placeholder="Digite um comando..." />
+          <button id="send-btn">ENVIAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
